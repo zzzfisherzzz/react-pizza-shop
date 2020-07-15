@@ -1,17 +1,16 @@
 const initialState = {
-    pizzas: []
+    items: [],
+    isLoaded: false,
 };
 
-function pizzasReducer(state = initialState, action) {
-
-    if (action.type === 'ADD_PIZZA') {
+const pizzas = (state = initialState, action) => {
+    if (action.type === 'SET_PIZZAS') {
         return {
             ...state,
-            pizzas: [1]
+            items: action.payload,
         };
     }
-
     return state;
-}
+};
 
-export { pizzasReducer };
+export default pizzas;
